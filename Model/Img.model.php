@@ -1,7 +1,7 @@
 <?php    
     
-    require_once './Core/init.php';
-    require_once 'config.php';
+    require_once './Core/Init.php';
+    require_once './Core/Config.php';
     class Img {
         protected static $_instance = null;
         public $_pdo;

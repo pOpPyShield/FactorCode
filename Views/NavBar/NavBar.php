@@ -1,4 +1,4 @@
-<?php include './Includes/autoloader.inc.php'; ?>
+<?php include_once './Model/Img.model.php'; ?>
 
 <div id="header">
         <div class="search-account">
@@ -22,7 +22,6 @@
                     </div> -->
 
             <!--1--><?php 
-                        require_once './Model/img.php';
                         /** If user login, remove icon login and display name, image */
                         if(isset($_SESSION['UserName'])) {
                     ?>      

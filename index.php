@@ -10,7 +10,10 @@
     }*/
     require_once ('Routes.php');  
     require_once ('./Includes/autoloader.controller.php');
+?>
 
-
+<?php 
+    require_once './Views/index.php';
+    require_once 'GetUrlAction.php';
 
 ?>
