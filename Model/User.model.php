@@ -40,10 +40,12 @@
              $st->bindParam(3, $email1);
              //If execute success, then go to if block
              if($st->execute()) {
+                 $st->closeCursor();
                 //Select user with username
                 $st2 = $this->_pdo->prepare("SELECT * FROM user where UserName = ?");
                 $st2->bindParam(1, $username);
                 $st2->execute();
+                $st2->closeCursor();
                 $this->_resultUserReg = $st2->fetch();
                 //Set value for prepare insert to profileimg table
                 $userid = $this->_resultUserReg['UserID'];
@@ -57,6 +59,7 @@
                 $st1->bindParam(3, $fileType);
                 $st1->bindParam(4, $NameImg);
                 $st1->execute();
+                $st1->closeCursor();
                 return true;
              }
              return false;

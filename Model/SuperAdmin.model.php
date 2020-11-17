@@ -36,6 +36,7 @@
             $st->execute();
             if($st->rowCount()==1) {
                 $this->_result = $st->fetch();
+                $st->closeCursor();
                 if(password_verify($pwd, $this->_result['Password'])) {
                     $this->username = $this->_result['UserName'];
                     //$this->_userID = $this->_result['UserID'];

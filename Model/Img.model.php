@@ -29,6 +29,7 @@
             $st = $this->_pdo->prepare("SELECT * FROM profileimg WHERE userId = $idUser");
             $st->execute();
             $this->_result = $st->fetch();
+            $st->closeCursor();
             $this->_imgType = $this->_result['Type'];
             $this->_imgName = $this->_result['Name'];
             if($this->_result['status'] == 0) {
@@ -64,6 +65,7 @@
                         $st->bindParam(3, $fileActualExt);
                         $st->bindParam(4, $usrID);
                         $st->execute();
+                        $st->closeCursor();
                         return true;
                     }
                     else {
